@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Store</title>
+    <link rel="icon" href="icecream.ico" type="image/.ico">
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Sweet Treats Ice Cream</h1>
+        <nav>
+            <ul>
+                <li><a href="#flavors">Flavors</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="flavors">
+            <h2>Our Delicious Flavors</h2>
+            <div class="flavor-container">
+                <div class="flavor">
+                    <img src="choco.avif" alt="Chocolate Ice Cream Cone">
+                    <div class="flavor chocolate">Chocolate</div>
+                    <button class="order-btn" onclick="openModal('Chocolate', 'Rich and creamy chocolate ice cream.', '₱50.00')">Order</button>
+                </div>
+                <div class="flavor">
+                    <img src="vanilla.jpg" alt="Vanilla Ice Cream Cone">
+                    <div class="flavor vanilla">Vanilla</div>
+                    <button class="order-btn" onclick="openModal('Vanilla', 'Classic vanilla ice cream made with real vanilla beans.', '₱40.00')">Order</button>
+                </div>
+                <div class="flavor">
+                    <img src="strawberry.jpg" alt="Strawberry Ice Cream Cone">
+                    <div class="flavor strawberry">Strawberry</div>
+                    <button class="order-btn" onclick="openModal('Strawberry', 'Fresh strawberry ice cream with real fruit pieces.', '₱65.25')">Order</button>
+                </div>
+                <div class="flavor">
+                    <img src="mint choco.jpg" alt="Mint Chocolate Chip Ice Cream Cone">
+                    <div class="flavor mint-chocolate-chip">Mint Chocolate Chip</div>
+                    <button class="order-btn" onclick="openModal('Mint Chocolate Chip', 'Refreshing mint ice cream with chocolate chips.', '₱70.25')">Order</button>
+                </div>
+                <div class="flavor">
+                    <img src="cookie.jpg" alt="Cookie Dough Ice Cream Cone">
+                    <div class="flavor cookie-dough">Cookie Dough</div>
+                    <button class="order-btn" onclick="openModal('Cookie Dough', 'Vanilla ice cream with chunks of cookie dough.', '₱65.25')">Order</button>
+                </div>
+            </div>
+            
+            
+            
+            
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Sweet Treats, we believe in using the finest ingredients to create the best ice cream. Our flavors are crafted with love and passion.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@sweettreats.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sweet Treats Ice Cream. Order now or you'll get thirsty.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script type="module">
+        import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+      
+        const widget = await Chatbox.initBubble({
+          agentId: 'cm4ax4mf00lkkq30mykqk6e95',
+          
+          // optional 
+          // If provided will create a contact for the user and link it to the conversation
+          contact: {
+            firstName: 'there',
+            email: 'customer@email.com',
+            phoneNumber: '+33612345644',
+            userId: '42424242',
+          },
+          // optional
+          // Override initial messages
+          initialMessages: [
+            'Hello Georges how are you doing today?',
+            'How can I help you ?',
+          ],
+          // optional
+          // Provided context will be appended to the Agent system prompt
+          context: "The user you are talking to is there. Start by Greeting him by his name.",
+        });
+      
+        // open the chat bubble
+        widget.open();
+      
+        // close the chat bubble
+        widget.close()
+      
+        // or 
+        widget.toggle()
+      </script>
+
+</body>
+</html>
